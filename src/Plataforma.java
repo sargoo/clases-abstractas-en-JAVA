@@ -3,12 +3,12 @@ public abstract class Plataforma {
     private int lanzamiento = 0;
     private Director director;
 
-    public Plataforma(String titulo, int lanzamiento, Director director, String directorNombre, String nacionalidad) {
+    public Plataforma(String titulo, int lanzamiento, Director director) {
         this.titulo = titulo;
         this.lanzamiento = lanzamiento;
-        this.director.nombre = directorNombre;
-        this.director.nacionalidad = director.nacionalidad;
+        this.director = director;
     }
+
 
 
     public String getTitulo() {

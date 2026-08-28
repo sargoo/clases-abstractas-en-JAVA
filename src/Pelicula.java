@@ -5,7 +5,7 @@ public class Pelicula extends Plataforma {
 
 
     public Pelicula(int duracion, int duracionCreditos,String descripcion, String titulo, int lanzamiento, Director director) {
-        super(titulo, lanzamiento, new Director(director.nombre, director.nacionalidad));
+        super(titulo, lanzamiento, director);
         this.duracion = duracion;
         this.duracionCreditos = duracionCreditos;
         this.descripcion = descripcion;

@@ -5,7 +5,7 @@ public class Serie extends Plataforma {
 
 
     public Serie (int cantEpisodios, int cantTemporadas, boolean finalizada, String titulo, int lanzamiento, Director director) {
-        super( titulo, lanzamiento, director);
+        super(titulo, lanzamiento, director);
         this.cantEpisodios = cantEpisodios;
         this.cantTemporadas = cantTemporadas;
         this.finalizada = finalizada;

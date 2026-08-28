@@ -15,10 +15,11 @@ void main() {
     do {
 
         System.out.println("---MENU PLATAFORMA DE STREAMING---");
-        System.out.println("1.Cargar nueva pelicula/serie: ");
+        System.out.println("1. Cargar nueva pelicula/serie: ");
         System.out.println("2. Buscar pelicula/serie por nombre: ");
         System.out.println("3. Mostrar solo series que son miniseries.");
         System.out.println("4. Mostrar SOLO PELICULAS que sean de un director determinado: ");
+        System.out.println("5. Salir.");
         opcion = sc.nextInt();
 
         switch (opcion){
@@ -52,7 +53,7 @@ void main() {
                 }
                 else{
                     Serie s = new Serie(0,0,false,"",0,new Director("", ""));
-                    System.out.println("Ingrese titulo de la pelicula:");
+                    System.out.println("Ingrese titulo de la serie:");
                     s.setTtitulo(sc.next());
                     sc.nextLine();
                     System.out.println("Ingrese cantidad de episodios: ");
@@ -81,5 +82,5 @@ void main() {
             }
         }
 
-    }while( opcion != 7);
+    }while( opcion != 5);
 }
