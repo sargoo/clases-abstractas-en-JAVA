@@ -25,7 +25,12 @@ public class Director {
         this.nacionalidad = nacionalidad;
     }
 
-    public String mostrarDirector() {
-        return  "Director: " + this.nombre + " nacionalidad: " + this.nacionalidad;
+    @Override
+    public String toString() {
+        return "Director{" +
+                "nombre='" + nombre + '\'' +
+                ", nacionalidad='" + nacionalidad + '\'' +
+                '}' ;
     }
+
 }

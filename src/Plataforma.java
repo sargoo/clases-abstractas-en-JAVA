@@ -3,16 +3,14 @@ public abstract class Plataforma {
     private int lanzamiento = 0;
     private Director director;
 
-    public Plataforma(String titulo, int lanzamiento, Director director) {
+    public Plataforma(String titulo, int lanzamiento, String Nombre , String Nacionalidad) {
         this.titulo = titulo;
         this.lanzamiento = lanzamiento;
-        this.director = director;
+        this.director = new Director(Nombre, Nacionalidad);
     }
 
-
-
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
     public void setTtitulo(String titulo){
         this.titulo = titulo;
@@ -31,6 +29,22 @@ public abstract class Plataforma {
 
         return this.director;
     }
+
+    public String getDirectorNombre(){
+
+        return this.director.getNombre();
+    }
+
+    @Override
+    public String toString() {
+        return "Plataforma{" +
+                "titulo='" + titulo + '\'' +
+                ", lanzamiento=" + lanzamiento +
+                  director.toString() +
+                '}';
+    }
+
+
 
 
 

@@ -3,15 +3,33 @@
 void main() {
 
 
-//    Pelicula p = new Pelicula(100,5,"el hombre que araña","spiderman",2026, new Director("Sam Raimi","estadounidence"));
-//    System.out.println(p.mostrarPelicula());
-
     Scanner sc = new Scanner(System.in);
     int opcion = 0;
-    System.out.println("Indique cuantas series/peliculas va ingresar: ");
-    int maxCont = sc.nextInt();
     int contador = 0;
-    Plataforma [] contenido = new Plataforma[maxCont];
+    Plataforma [] contenido = new Plataforma[20];
+    contenido[0] = new Pelicula(148, 10, "Ciencia ficción y sueños", "Inception", 2010,"Christopher", "Nolan");
+    contenido[1] = new Pelicula(175, 12, "Clásico de mafiosos", "The Godfather", 1972, "Francis Ford", "Coppola");
+    contenido[2] = new Pelicula(195, 15, "Drama histórico en la SGM", "Schindler's List", 1993,"Steven", "Spielberg");
+    contenido[3] = new Pelicula(136, 8, "Simulación virtual y acción", "The Matrix", 1999, "Lana", "Wachowski");
+    contenido[4] = new Pelicula(154, 11, "El caballero de la noche", "The Dark Knight", 2008, "Christopher", "Nolan");
+    contenido[5] = new Pelicula(90, 5, "Animación y juguetes", "Toy Story", 1995, "John", "Lasseter");
+    contenido[6] = new Pelicula(117, 7, "Aventura espacial", "Interstellar Mini", 2014, "Christopher", "Nolan");
+    contenido[7] = new Pelicula(169, 13, "Viaje interestelar masivo", "Interstellar", 2014, "Christopher", "Nolan");
+    contenido[8] = new Pelicula(81, 4, "Animación ogro verde", "Shrek", 2001, "Andrew", "Adamson");
+    contenido[9] = new Pelicula(201, 20, "Fantasía épica extendida", "The Lord of the Rings 3", 2003,"Peter", "Jackson");
+
+// --- 10 SERIES ---
+// Parámetros: cantEpisodios, cantTemporadas, finalizada, titulo, lanzamiento, Director
+    contenido[10] = new Serie(62, 5, true, "Breaking Bad", 2008,"Vince", "Gilligan");
+    contenido[11] = new Serie(73, 8, true, "Game of Thrones", 2011, "David", "Benioff");
+    contenido[12] = new Serie(10, 1, true, "Chernobyl", 2019,"Craig", "Mazin"); // Es Miniserie
+    contenido[13] = new Serie(9, 1, true, "WandaVision", 2021, "Matt", "Shakman"); // Es Miniserie
+    contenido[14] = new Serie(236, 10, true, "Friends", 1994,"David", "Crane");
+    contenido[15] = new Serie(7, 1, false, "Serie Incompleta", 2023, "Desconocido", "Director");
+    contenido[16] = new Serie(39, 3, true, "Dark", 2017,"Baran bo", "Odar");
+    contenido[17] = new Serie(8, 1, true, "The Queen's Gambit", 2020, "Scott", "Frank"); // Es Miniserie
+    contenido[18] = new Serie(9, 1, false, "Miniserie No Finalizada", 2022,"Juan", "Perez");
+    contenido[19] = new Serie(40, 4, false, "Stranger Things", 2016, "Matt", "Duffer");
     do {
 
         System.out.println("---MENU PLATAFORMA DE STREAMING---");
@@ -24,61 +42,41 @@ void main() {
 
         switch (opcion){
             case 1 ->{
-                if(contador >=  maxCont){
-                    System.out.println("No se pueden ingresar mas peliculas/series.");
-                }
-                else
-                    System.out.println("Ingrese 1 para cargar una pelicula o 2 para cargar una serie:");
-                int opcionCarga = sc.nextInt();
-                if(opcionCarga == 1){
-                    Pelicula p = new Pelicula(0,0,"","",0,new Director("", ""));
-                    System.out.println("Ingrese titulo de la pelicula:");
-                    p.setTtitulo(sc.next());
-                    System.out.println("Ingrese descripcion de la pelicula:");
-                    p.setDescripcion(sc.next());
-                    sc.nextLine();
-                    System.out.println("Ingrese duracion de la pelicula:");
-                    p.setDuracion(sc.nextInt());
-                    System.out.println("Ingrese duracion de los creditos");
-                    p.setDuracionCreditos(sc.nextInt());
-                    System.out.println("Ingrese año de lanzamiento: ");
-                    p.setLanzamiento(sc.nextInt());
-                    sc.nextLine();
-                    System.out.println("Ingrese Nombre del director: ");
-                    p.getDirector().setNombre(sc.next());
-                    System.out.println("Ingrese nacionalidad del director: ");
-                    p.getDirector().setNacionalidad(sc.next());
-                    contenido[contador] = p;
-                    contador++;
-                }
-                else{
-                    Serie s = new Serie(0,0,false,"",0,new Director("", ""));
-                    System.out.println("Ingrese titulo de la serie:");
-                    s.setTtitulo(sc.next());
-                    sc.nextLine();
-                    System.out.println("Ingrese cantidad de episodios: ");
-                    s.setCantEpisodios(sc.nextInt());
-                    System.out.println("Ingrese cantidad de temporadas");
-                    s.setCantTemporadas(sc.nextInt());
-                    System.out.println("Indique si la serie ya finalizo (SI = 1, NO = 0): ");
-                    s.setFinalizada(sc.nextInt() == 1);
-                    System.out.println("Ingrese año de lanzamiento: ");
-                    s.setLanzamiento(sc.nextInt());
-                    sc.nextLine();
-                    System.out.println("Ingrese Nombre del director: ");
-                    s.getDirector().setNombre(sc.next());
-                    System.out.println("Ingrese nacionalidad del director: ");
-                    s.getDirector().setNacionalidad(sc.next());
-                    contenido[contador] = s;
-                    contador++;
-                }
-
-
 
             }
 
             case 2 -> {
                 System.out.println("Ingrese titulo de la pelicula");
+                sc.nextLine();
+                String busqueda = sc.nextLine();
+                for( int i = 0; i < 20; i++){
+                    if(contenido[i].getTitulo().equals(busqueda)){
+                        System.out.println("resultado encontrado:");
+                        System.out.println(contenido[i].toString());
+                    }
+                }
+            }
+
+            case 3 ->{
+                for(int i = 0 ; i < 20; i ++){
+                    if(contenido[i] instanceof Serie){
+                        if("Miniserie".equals(contenido[i].categoria()))
+                        System.out.println(contenido[i].getTitulo());
+                    }
+                }
+            }
+
+            case 4 -> {
+                System.out.println("Ingrese nombre del director");
+                sc.nextLine();
+                String busqueda  = sc.nextLine();
+                for ( int i = 0; i < 20; i++){
+                    if(contenido[i] instanceof Pelicula){
+                        if(contenido[i].getDirectorNombre().equals(busqueda)){}
+                        System.out.println("resultado encontrado:");
+                        System.out.println(contenido[i].toString());
+                    }
+                }
             }
         }
 

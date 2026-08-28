@@ -4,8 +4,8 @@ public class Serie extends Plataforma {
     private boolean finalizada = false;
 
 
-    public Serie (int cantEpisodios, int cantTemporadas, boolean finalizada, String titulo, int lanzamiento, Director director) {
-        super(titulo, lanzamiento, director);
+    public Serie (int cantEpisodios, int cantTemporadas, boolean finalizada, String titulo, int lanzamiento, String Nombre, String Nacionalidad) {
+        super(titulo, lanzamiento, Nombre, Nacionalidad);
         this.cantEpisodios = cantEpisodios;
         this.cantTemporadas = cantTemporadas;
         this.finalizada = finalizada;
@@ -50,6 +50,15 @@ public class Serie extends Plataforma {
         else {
             return "Serie normal";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Serie{" +
+                "cantEpisodios=" + cantEpisodios +
+                ", cantTemporadas=" + cantTemporadas +
+                ", finalizada=" + finalizada +
+                '}' + super.toString();
     }
 
     @Override

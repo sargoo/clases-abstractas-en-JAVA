@@ -4,8 +4,8 @@ public class Pelicula extends Plataforma {
     private String descripcion;
 
 
-    public Pelicula(int duracion, int duracionCreditos,String descripcion, String titulo, int lanzamiento, Director director) {
-        super(titulo, lanzamiento, director);
+    public Pelicula(int duracion, int duracionCreditos,String descripcion, String titulo, int lanzamiento, String Nombre , String Nacionalidad) {
+        super(titulo, lanzamiento, Nombre, Nacionalidad);
         this.duracion = duracion;
         this.duracionCreditos = duracionCreditos;
         this.descripcion = descripcion;
@@ -35,9 +35,8 @@ public class Pelicula extends Plataforma {
         this.descripcion = descripcion;
     }
 
-    public void setDirectorNombre(String directorNombre){
-
-
+    public String getTituloPelicula() {
+        return getTitulo();
     }
 
     public String categoria(){
@@ -51,13 +50,14 @@ public class Pelicula extends Plataforma {
         }
     }
 
-    public String mostrarPelicula(){
-        return "Titulo: " + super.getTitulo() + "\n"
-                + "Duracion: " + this.duracion + " minutos \n"
-                +"Duracion de los creditos: " + this.duracionCreditos + " minutos \n"
-                + "Descripcion: " + this.descripcion + "\n"
-                + "Lanzamiento: " + super.getLanzamiento() + "\n"
-                + super.getDirector();
+
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "duracion=" + duracion +
+                ", duracionCreditos=" + duracionCreditos +
+                ", descripcion='" + descripcion + '\'' +
+                '}' + super.toString();
     }
 
     @Override
